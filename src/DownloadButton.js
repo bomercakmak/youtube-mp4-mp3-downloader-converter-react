@@ -5,13 +5,13 @@ import "./DownloadButton.css";
 function DownloadButton({ id, type }) {
   return (
     <div className="download">
-
+      <h2>Downland {type === "mp3" ? "MP3" : "MP4"}</h2>
       <iframe
         src={`https://www.yt-download.org/api/button/${type}/${id}`}
         width="100%"
         height="100px"
         scrolling="no"
-        style={{ border: "1px solid black" }}
+        style={{ padding: "10px", textAlign: "center" }}
       ></iframe>
     </div>
   );

@@ -11,6 +11,11 @@
   background-color:#425D7D;
 
 }
+.appNavbar p{
+  margin-top:15px;
+ 
+
+}
 .appLinkBox{
   padding:20px;
 
@@ -21,4 +26,10 @@
   width:40% ;
   font-size: 20px;
   border-radius: 8px;
+}
+
+@media (max-width:700px){
+  .appLinkBox input{
+      width:80%;
+  }
 }

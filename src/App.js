@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import DownloadButton from "./DownloadButton";
 import DownloadButtonDefault from "./DownloadButtonDefault";
+import InvalidUrl from "./InvalidUrl";
 import "./App.css";
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
   return (
     <div className="App">
       <div className="appNavbar">
-        <h1>Youtube Converter</h1>
-        <p>Welcome to my app!</p>
+        <h1>The easiest and simplest way to download Youtube MP4 and MP3</h1>
+        <p>Created by : bomercakmak</p>
       </div>
       <div className="appLinkBox">
         <form onSubmit={(e) => e.preventDefault()}>
@@ -35,8 +36,14 @@ function App() {
           <DownloadButtonDefault />
         ) : (
           <div>
-            <DownloadButton id={id} type="mp3" />
-            <DownloadButton id={id} type="videos" />
+            {videoUrl.startsWith("https://www.youtube.com/watch?v=") ? (
+              <div>
+                <DownloadButton id={id} type="mp3" />
+                <DownloadButton id={id} type="videos" />
+              </div>
+            ) : (
+              <InvalidUrl />
+            )}
           </div>
         )}
       </div>
