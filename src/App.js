@@ -1,8 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
+import DownloadButton from "./DownloadButton";
+import DownloadButtonDefault from "./DownloadButtonDefault";
 import "./App.css";
 
 function App() {
   const [videoUrl, setvideoUrl] = useState("");
+
   const [id, setId] = useState("");
 
   useEffect(() => {
@@ -25,6 +29,16 @@ function App() {
             placeholder="Put your YouTube video link..."
           />
         </form>
+      </div>
+      <div className="dowlandButton">
+        {videoUrl === "" ? (
+          <DownloadButtonDefault />
+        ) : (
+          <div>
+            <DownloadButton id={id} type="mp3" />
+            <DownloadButton id={id} type="videos" />
+          </div>
+        )}
       </div>
     </div>
   );

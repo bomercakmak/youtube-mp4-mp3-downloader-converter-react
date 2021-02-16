@@ -1,3 +1,7 @@
+*{
+  margin:0;
+}
+
 .App {
   text-align: center;
 }
@@ -6,4 +10,15 @@
   color: white;
   background-color:#425D7D;
 
+}
+.appLinkBox{
+  padding:20px;
+
+}
+
+.appLinkBox input {
+  padding:20px;
+  width:40% ;
+  font-size: 20px;
+  border-radius: 8px;
 }
