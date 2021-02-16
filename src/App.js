@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="appNavbar">
+        <h1>Youtube Converter</h1>
+        <p>Welcome to my app!</p>
+      </div>
+      <div className="appLinkBox">
+        <form>
+          <input type="text" placeholder="Put your YouTube video link..."/>
+        </form>
+      </div>
     </div>
   );
 }
