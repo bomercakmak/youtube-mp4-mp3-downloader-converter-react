@@ -5,7 +5,7 @@ import "./DownloadButton.css";
 function DownloadButton({ id, type }) {
   return (
     <div className="download">
-      <h2>Downland {type === "mp3" ? "MP3" : "MP4"}</h2>
+      <h2>Download {type === "mp3" ? "MP3" : "MP4"}</h2>
       <iframe
         src={`https://www.yt-download.org/api/button/${type}/${id}`}
         width="100%"

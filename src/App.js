@@ -11,14 +11,34 @@ function App() {
   const [id, setId] = useState("");
 
   useEffect(() => {
-    const id = videoUrl.replace("https://www.youtube.com/watch?v=", "");
+    let id = videoUrl.replace("https://www.youtube.com/watch?v=", "");
     setId(id);
+    if(videoUrl.startsWith("https://youtu.be/")){
+    id = videoUrl.replace("https://youtu.be/", "")
+    setId(id);
+  }
+    if(videoUrl.startsWith("https://m.youtube.com/watch?v=")){
+    id = videoUrl.replace("https://m.youtube.com/watch?v=", "")
+    setId(id);
+  }
   }, [videoUrl]);
+
+  
+
+  let start = null;
+  if((videoUrl.startsWith("https://www.youtube.com/watch?v=")) || (videoUrl.startsWith("https://youtu.be/")) || (videoUrl.startsWith("https://m.youtube.com/watch?v="))){
+    start = ( <div>
+      <DownloadButton id={id} type="mp3" />
+      <DownloadButton id={id} type="videos" />
+    </div>)
+ } else {
+    start = (<InvalidUrl />)
+ }
 
   return (
     <div className="App">
       <div className="appNavbar">
-        <h1>The easiest and simplest way to download Youtube MP4 and MP3</h1>
+        <h1>The easiest and simplest way to download Youtube MP3 and MP4</h1>
         <p>Created by : bomercakmak</p>
       </div>
       <div className="appLinkBox">
@@ -35,15 +55,8 @@ function App() {
         {videoUrl === "" ? (
           <DownloadButtonDefault />
         ) : (
-          <div>
-            {videoUrl.startsWith("https://www.youtube.com/watch?v=") ? (
-              <div>
-                <DownloadButton id={id} type="mp3" />
-                <DownloadButton id={id} type="videos" />
-              </div>
-            ) : (
-              <InvalidUrl />
-            )}
+          <div>  
+            {start}
           </div>
         )}
       </div>
