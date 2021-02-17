@@ -1,7 +1,26 @@
-# Getting Started with Create React App
+# Getting Started Youtube MP4 & MP3 Downloader
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Introduction video of my application 
+
+[Try It Out Now!](https://bomercakmak-youtube-mp3-mp4-downloader.netlify.app/)
+
+<a href="https://bomercakmak-youtube-mp3-mp4-downloader.netlify.app/"><img src="./src/gif/youtube-mp3mp4-download.gif" title="youtube-mp3mp4-download.gif"></a>
+
+## Available Scripts Usage
+
+### Install dependencies
+
+```
+npm install
+```
+
+### Run React dev server (http://localhost:3000)
+
+```
+npm start
+```
 
 
 ### `npm run build`
